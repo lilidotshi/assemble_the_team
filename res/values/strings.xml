@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ASSEMBLE!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="assemble_button_text">ASSEMBLE!</string>
+    <string name="contacts_action_bar_text">Friends</string>
+    <string name="pastevents_action_bar_text">Past ASSEMBLES</string>
+</resources>
