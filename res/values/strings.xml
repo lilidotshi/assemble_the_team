@@ -7,4 +7,5 @@
     <string name="assemble_button_text">ASSEMBLE!</string>
     <string name="contacts_action_bar_text">Friends</string>
     <string name="pastevents_action_bar_text">Past ASSEMBLES</string>
+    <string name="phone_contacts_string">Add A New Friend</string>
 </resources>

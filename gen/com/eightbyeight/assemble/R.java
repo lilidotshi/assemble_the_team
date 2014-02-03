@@ -21,18 +21,26 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int box=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f080002;
-        public static final int button1=0x7f080000;
-        public static final int textView1=0x7f080001;
+        public static final int action_settings=0x7f080006;
+        public static final int button1=0x7f080002;
+        public static final int contacts_item=0x7f080004;
+        public static final int phone_contacts=0x7f080001;
+        public static final int phone_contacts_text=0x7f080000;
+        public static final int separator=0x7f080003;
+        public static final int textView1=0x7f080005;
     }
     public static final class layout {
         public static final int activity_assemble_main=0x7f030000;
-        public static final int assemble_fragment=0x7f030001;
-        public static final int contacts_fragment=0x7f030002;
-        public static final int past_assembles_fragment=0x7f030003;
+        public static final int add_contacts_fragment=0x7f030001;
+        public static final int add_contacts_text=0x7f030002;
+        public static final int assemble_fragment=0x7f030003;
+        public static final int contacts_fragment=0x7f030004;
+        public static final int contacts_fragment_layout=0x7f030005;
+        public static final int past_assembles_fragment=0x7f030006;
     }
     public static final class menu {
         public static final int assemble_main=0x7f070000;
@@ -44,6 +52,7 @@ public final class R {
         public static final int contacts_action_bar_text=0x7f050004;
         public static final int hello_world=0x7f050002;
         public static final int pastevents_action_bar_text=0x7f050005;
+        public static final int phone_contacts_string=0x7f050006;
     }
     public static final class style {
         /** 
