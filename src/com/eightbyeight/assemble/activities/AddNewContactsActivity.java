@@ -90,7 +90,7 @@ public class AddNewContactsActivity extends Activity implements LoaderManager.Lo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_contacts_fragment);
+        setContentView(R.layout.add_contacts_activity);
         
         // Gets the ListView from the View list of the parent activity
         mContactsList = (ListView)findViewById(R.id.phone_contacts);

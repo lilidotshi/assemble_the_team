@@ -76,7 +76,7 @@ int id textView1 0x7f05000d
 int id texty 0x7f050007
 int integer google_play_services_version 0x7f070000
 int layout activity_assemble_main 0x7f030000
-int layout add_contacts_fragment 0x7f030001
+int layout add_contacts_activity 0x7f030001
 int layout add_contacts_text 0x7f030002
 int layout assemble_fragment 0x7f030003
 int layout contacts_fragment 0x7f030004

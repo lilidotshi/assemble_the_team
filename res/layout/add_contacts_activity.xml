@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="#000"
      >
     <TextView
         android:id="@+id/phone_contacts_text"
@@ -10,6 +11,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="27sp"
         android:focusable="false"
+        android:textColor="#b8b8b8"
         android:text="@string/phone_contacts_string">        
     </TextView>
 
@@ -20,7 +22,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/phone_contacts_text" 
         android:paddingTop="2sp"
-        android:divider="#000"
+        android:divider="#FFF"
         android:dividerHeight="1sp"/>
 
 </RelativeLayout>

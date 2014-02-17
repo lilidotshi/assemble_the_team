@@ -243,7 +243,7 @@ containing a value of this type.
     }
     public static final class layout {
         public static final int activity_assemble_main=0x7f030000;
-        public static final int add_contacts_fragment=0x7f030001;
+        public static final int add_contacts_activity=0x7f030001;
         public static final int add_contacts_text=0x7f030002;
         public static final int assemble_fragment=0x7f030003;
         public static final int contacts_fragment=0x7f030004;
