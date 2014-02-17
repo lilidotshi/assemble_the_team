@@ -1,0 +1,26 @@
+ASSEMBLE! is an app that seeks to create spontaneous gatherings. By adding friends to the app, you can seen "ASSEMBLE!" calls to all of your closest friends
+with the touch of a single button. They will receive a message, along with coordinates of where you are currently located. Cool street event? ASSEMBLE!
+Sudden concert in the park? ASSEMBLE! Want to just hang out at your apartment? ASSEMBLE! The idea behind ASSEMBLE! is to connect with friends as easily
+and as often as possible.
+
+Still in development.
+
+Tasks to do.
+
+Alpha version:
+Create an SMS with all added contacts, and send with coordinates and a simple message. Coordinates can be clicked (should open up Google Maps in
+Android devices).
+
+Beta version: 
+Set up a server and start populating with users, indexed by their phone number and their user name. That way all requests can be done via the
+app.
+Create a small thumbnail of Google Maps in the app itself.
+Allow users to respond to ASSEMBLE! calls with a "Will Be There!" or "Will Not Be There!".
+Log all ASSEMBLE! calls and respond tos, for historic and memory purposes (will be stored as data).
+
+Beyond beta:
+Allow ASSEMBLE! calls to be categorized by type or "surprise me".
+Start tracking what users respond to the most based on type (e.g. more users respond to "food" requests rather than "wrestling rabid badgers" requests.)
+Start suggesting event nearby (based on internet searches, user location, and user preferences).
+???
+Profit???
