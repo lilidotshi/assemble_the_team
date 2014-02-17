@@ -12,12 +12,18 @@ import android.widget.TextView;
 
 import com.eightbyeight.assemble.R;
 
-public class CustomListAdapter extends ArrayAdapter<Contacts>{
+/**
+ * Creates a header/separator for the contacts, so that users can be ordered in sections
+ * @author shil
+ *
+ */
+public class CustomListAdapter extends ArrayAdapter<AssembleContacts>{
     Context context;
     int layoutResourceId;   
-    ArrayList<Contacts> contacts= null;
+    ArrayList<AssembleContacts> contacts= null;
     
-    public CustomListAdapter(Context context, int layoutResourceId, ArrayList<Contacts> contacts) {
+    //TODO look into making this more adaptable so we're not constantly creating new objects in ContactsFragment
+    public CustomListAdapter(Context context, int layoutResourceId, ArrayList<AssembleContacts> contacts) {
         super(context, layoutResourceId, contacts);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
@@ -28,7 +34,7 @@ public class CustomListAdapter extends ArrayAdapter<Contacts>{
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
         ContactsHolder holder = null;
-        Contacts contact = contacts.get(position);
+        AssembleContacts contact = contacts.get(position);
         if(row == null)
         {
             boolean needSeparator = false;
@@ -36,19 +42,25 @@ public class CustomListAdapter extends ArrayAdapter<Contacts>{
             row = inflater.inflate(layoutResourceId, parent, false);
            
             holder = new ContactsHolder();
+            //Get both views in our layout to hide/unhide
             holder.separator =(TextView)row.findViewById(R.id.separator);
             holder.txtView = (TextView)row.findViewById(R.id.contacts_item);
-            if(position == 0 && !contact.getName().equals("+Add New Contact")){
+            
+            //First position, we need a header
+            if(position == 0){
                 needSeparator = true;
             }else if (position != 0){
-                if (!contacts.get(position-1).getName().substring(0, 1).equals(contact.getName().substring(0,1))){
+                //If we've encountered a new letter in the beginning, we need a new header
+                if (!contacts.get(position-1).getName().substring(0, 1).equalsIgnoreCase(contact.getName().substring(0,1))){
                     needSeparator = true;
                 }
             }
             
+            //If we need a header, we make the header/separator
             if(needSeparator){
                 holder.separator.setText(contact.getName().substring(0,1).toUpperCase());
                 holder.txtView.setText(contact.getName());
+            //Otherwise hide it.
             }else{
                 holder.separator.setVisibility(TextView.GONE);
                 holder.txtView.setText(contact.getName());

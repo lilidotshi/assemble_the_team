@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:divider="#fff" 
-    android:dividerHeight="1sp"
-    android:padding="3sp">
+    android:layout_height="match_parent">
+    
+    <TextView
+        android:id="@+id/add_a_new_friend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="27sp"
+        android:focusable="false"
+        android:clickable="true"
+        android:text="@string/add_new_contact">        
+    </TextView>
+
+    <ListView
+        android:id="@+id/friends"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:divider="#fff" 
+	    android:dividerHeight="1sp"
+	    android:padding="3sp"
+        android:layout_below="@id/add_a_new_friend" 
+    >
 
 
-</ListView>
+    </ListView>
 
+</RelativeLayout>

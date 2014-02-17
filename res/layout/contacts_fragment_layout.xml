@@ -9,7 +9,7 @@
         style="?android:attr/listSeparatorTextViewStyle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="#38c0f4" />
+        android:textColor="#38c0f4"       />
 
    <TextView
           android:id="@+id/contacts_item"          
@@ -17,6 +17,8 @@
           android:layout_height="wrap_content"
           android:textColor="#b8b8b8"
           android:textSize="25sp"
-          android:clickable="true"/>
+          android:gravity="center_vertical"
+          android:paddingLeft="6dip"
+          android:minHeight="?android:attr/listPreferredItemHeight"          />
 
 </LinearLayout>

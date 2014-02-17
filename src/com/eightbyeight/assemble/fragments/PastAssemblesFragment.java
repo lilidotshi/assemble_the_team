@@ -8,6 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * Will be a history of all ASSEMBLE! calls both sent and responded to.
+ * @author shil
+ *
+ */
 public class PastAssemblesFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
