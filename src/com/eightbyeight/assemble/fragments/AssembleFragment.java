@@ -3,9 +3,8 @@ package com.eightbyeight.assemble.fragments;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.content.IntentSender;
-import android.location.Location;
 import android.os.Bundle;
-import android.os.SystemClock;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.eightbyeight.assemble.R;
+import com.eightbyeight.assemble.adapters.AssembleContacts;
+import com.eightbyeight.assemble.filehandlers.FileHandler;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -64,22 +65,32 @@ public class AssembleFragment extends Fragment implements OnClickListener,
     @Override
     public void onClick(View arg0) {
         /* Test code */
-        mLocationClient.setMockMode(true);
-        final String PROVIDER = "flp";
-        final double LAT = 37.377166;
-        final double LNG = -122.086966;
-        final float ACCURACY = 3.0f;
-        Location newLocation = new Location(PROVIDER);
-        newLocation.setLatitude(LAT);
-        newLocation.setLongitude(LNG);
-        newLocation.setAccuracy(ACCURACY);
-        newLocation.setTime(System.currentTimeMillis());
-        newLocation.setElapsedRealtimeNanos(SystemClock.elapsedRealtime());
-        mLocationClient.setMockLocation(newLocation);
+//        mLocationClient.setMockMode(true);
+//        final String PROVIDER = "flp";
+//        final double LAT = 37.377166;
+//        final double LNG = -122.086966;
+//        final float ACCURACY = 3.0f;
+//        Location newLocation = new Location(PROVIDER);
+//        newLocation.setLatitude(LAT);
+//        newLocation.setLongitude(LNG);
+//        newLocation.setAccuracy(ACCURACY);
+//        newLocation.setTime(System.currentTimeMillis());
+//        newLocation.setElapsedRealtimeNanos(SystemClock.elapsedRealtime());
+//        mLocationClient.setMockLocation(newLocation);
         /* End test code */
         Log.d("ASSEMBLE!", "" + mLocationClient.isConnected());
 
         Log.d("ASSEMBLE!", "" + mLocationClient.getLastLocation());
+        /* Test code below! Should probably 1. thread, 2. create a new object, and 3 error validate it. But positive case works!*/
+        if (mLocationClient.isConnected() && mLocationClient.getLastLocation() != null){
+    		SmsManager manager = SmsManager.getDefault();
+        	Log.d("ASSEMBLE!","The message will look like: ASSEMBLE! https://maps.google.com/?q=" + mLocationClient.getLastLocation().getLatitude() + "," + mLocationClient.getLastLocation().getLongitude());
+        	for(AssembleContacts contact : FileHandler.getInstance().getContacts()){
+        		Log.d("ASSEMBLE!", contact.getPhoneNumbers().get(0));
+        		manager.sendTextMessage(contact.getPhoneNumbers().get(0), null, "ASSEMBLE! https://maps.google.com/?q=" + mLocationClient.getLastLocation().getLatitude() + "," + mLocationClient.getLastLocation().getLongitude(), null, null);
+        	}
+        }
+        		
     }
 
     private boolean servicesConnected() {
